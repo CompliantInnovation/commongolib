@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"runtime"
 	"testing"
-	"commongolib"
+	"github.com/CompliantInnovation/commongolib"
 )
 
 // assert fails the test if the condition is false.
@@ -67,7 +67,7 @@ func TestAE2_Encode(t *testing.T) {
 	}
 
 	for _, testCase := range cases {
-		equals(t, testCase.encoded, docsperacommonlib.AE2Encode(testCase.unencoded))
+		equals(t, testCase.encoded, commongolib.AE2Encode(testCase.unencoded))
 	}
 }
 
@@ -97,7 +97,7 @@ func TestAE2_Decode(t *testing.T) {
 	}
 
 	for _, testCase := range cases {
-		result, ok := docsperacommonlib.AE2Decode(testCase.encoded)
+		result, ok := commongolib.AE2Decode(testCase.encoded)
 		if !ok {
 			t.Fatalf("AE2Decode() failed: %d => %d", testCase.encoded, testCase.unencoded)
 		}
